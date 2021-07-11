@@ -92,6 +92,7 @@ export class VendingMachineService {
   }
 
   purchase(purchaseData: PurchaseData): Observable<any> {
+    // TODO: remove logs
     console.log('before payment moneyInVendingMachine', this.moneyInVendingMachine);
     console.log('before payment items', items);
     if (purchaseData.paymentMethode === PaymentMethode.CreditCard) {
@@ -124,7 +125,7 @@ export class VendingMachineService {
     });
     if (totalChange === 0) {
       this.moneyInVendingMachine = {...machineMoneyIncUserMoney};
-      return of({changeList: {}});
+      return of({changeList: null});
     }
     if (totalMoneySum(machineMoneyIncUserMoney) >= totalChange) { // should be true
       // loop through currency if it exist in the machine and less than change

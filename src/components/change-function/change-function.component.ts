@@ -9,4 +9,7 @@ export class ChangeFunctionComponent {
 
   @Input()
   change: number;
+
+  @Input()
+  changeList: number;
 }

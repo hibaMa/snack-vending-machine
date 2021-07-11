@@ -8,7 +8,7 @@
     <vm-bill-acceptor (onBillAdded)="onMoneyAdded($event)"></vm-bill-acceptor>
     <vm-card-reader (onCardScan)="onCreditCardScanned($event)"></vm-card-reader>
     <vm-coin-acceptor (onCoinAdded)="onMoneyAdded($event)"></vm-coin-acceptor>
-    <vm-change-function [change]="change" (click)="change = 0"></vm-change-function>
+    <vm-change-function [change]="change" [changeList]="userChangeList" (click)="change = 0"></vm-change-function>
   </div>
   <div class="vendingMachineView-pickUpBox">
     pick up your snack
@@ -18,5 +18,3 @@
 </div>
 
 status: {{VendingStatusMap[currentStatus]}}
-userChangeList: {{userChangeList | json}}
-key represent coin/bill, value is the amount

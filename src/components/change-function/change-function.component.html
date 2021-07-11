@@ -1,4 +1,10 @@
 <div class="ChangeFunction">
-  change:
+  <span>change:</span>
   <div class="ChangeFunction-value">{{change}}</div>
+  <ng-container *ngIf="change">
+    <span>change list:</span>
+    <div class="ChangeFunction-list">
+      <div *ngFor="let item of changeList | keyvalue">{{item.key}}$/{{item.value}}</div>
+    </div>
+  </ng-container>
 </div>

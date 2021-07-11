@@ -1,6 +1,7 @@
 .ChangeFunction {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 8px;
 
   &-value {
     margin-left: 4px;
@@ -14,5 +15,10 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+  }
+
+  &-list {
+    padding-left: 4px;
+    line-height: 1.4;
   }
 }

@@ -15,24 +15,24 @@ const ErrorMessagesMap = {
 })
 export class GetUserMessagePipe implements PipeTransform {
 
-  transform(vendingMachineStatus: VendingStatus, keypadVal: string, price: number, validationError: ValidationErrorKey, totalSumOfMoneyInsertedByUserInCent: number): string {
+  transform(vendingMachineStatus: VendingStatus, keypadVal: string, price: number, validationError: ValidationErrorKey, totalSumOfMoneyInsertedByUser: number): string {
     let msg = '';
     switch (vendingMachineStatus) {
       case VendingStatus.Initial:
         msg = 'Please enter Snack position then click OK';
         break;
       case VendingStatus.EnteringPosition:
-        msg = 'click ok on done \n' + 'POSITION: ' + keypadVal;
+        msg = 'Click ok on done \n' + 'POSITION: ' + keypadVal;
         break;
       case VendingStatus.DoingPayment:
         msg = 'Selected item price: ' + price + '\n please scan card(click on Done) or insert coins/cash'
-          + '\n entered amount: ' + totalSumOfMoneyInsertedByUserInCent;
+          + '\n entered amount: ' + totalSumOfMoneyInsertedByUser;
         break;
       case VendingStatus.ProcessingPayment:
         msg = 'Thanks! your payment is being processed';
         break;
       case VendingStatus.DispenseItem:
-        msg = 'Enjoy your snack';
+        msg = 'Enjoy your snack!';
         break;
     }
     return validationError ? ErrorMessagesMap[validationError] + '\n' + msg : msg;
