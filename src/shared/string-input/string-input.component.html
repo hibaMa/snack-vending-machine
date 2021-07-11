@@ -1,0 +1,10 @@
+<div [ngClass]="ngClass">
+    <input
+      [type]="type"
+      [disabled]="isDisabled"
+      [ngClass]="inputClass"
+      [class.has-error]="this.hasError"
+      [(ngModel)]="value"
+      step="any"
+      [placeholder]="placeholder || ''">
+</div>

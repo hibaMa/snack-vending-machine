@@ -1,0 +1,3 @@
+<vm-button-group class="CoinAcceptor" appearance="secondary" (click)="onCoinAdded.emit($event)">
+  <vm-button *ngFor="let coin of coinValues" [value]="coin.value">{{coin.text}}</vm-button>
+</vm-button-group>

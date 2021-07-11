@@ -1,0 +1,3 @@
+<vm-button-group class="BillAcceptor" appearance="secondary" (click)="onBillAdded.emit($event)">
+  <vm-button *ngFor="let bill of billValues" [value]="bill.value">{{bill.text}}</vm-button>
+</vm-button-group>

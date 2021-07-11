@@ -1,0 +1,5 @@
+<div class="Keypad">
+  <span class="Keypad-key" *ngFor="let key of keys" (click)="onKeyClick(key)">{{key}}</span>
+  <span class="Keypad-actionKey" (click)="actionKeyClicked.emit(ActionKey.ok)">Ok</span>
+  <span class="Keypad-actionKey" (click)="actionKeyClicked.emit(ActionKey.exit)">Exit</span>
+</div>

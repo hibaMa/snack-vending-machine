@@ -1,0 +1,49 @@
+@mixin form-input-component {
+  background-color: white;
+  border: 1px solid #dfe2e6;
+  border-radius: 4px;
+
+  &:focus:not(.is-disabled) {
+    border-color: #00a3e0;
+    box-shadow: 0 0 0 1px #00a3e0;
+  }
+
+  &:hover:not(.is-disabled) {
+    border-color: #1AACE3;
+  }
+
+  &.is-disabled {
+    background-color: #eef0f2;
+    border-color: #dfe2e6;
+    color: #bcc3cc;
+    cursor: not-allowed;
+  }
+}
+
+.StringInput {
+  .input {
+    color: #132d4d;
+    width: 188px;
+    padding: 9px 12px;
+    min-height: 40px;
+    
+    @include form-input-component();
+
+    &::placeholder {
+      color: #8996a6;
+    }
+
+    &.has-error {
+      border-color: #eb0045;
+    }
+  }
+
+  &--fullWidth {
+    width: 100% !important;
+
+    input {
+      width: 100% !important;
+    }
+  }
+
+}

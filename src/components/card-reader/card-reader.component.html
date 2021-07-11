@@ -1,0 +1,4 @@
+<div class="CardReader">
+  <vm-string-input [(ngModel)]="cardNumber"></vm-string-input>
+  <vm-button appearance="secondary" (click)="onCardScan.emit(cardNumber)">Done</vm-button>
+</div>

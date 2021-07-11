@@ -1,0 +1,18 @@
+.ChangeFunction {
+  display: flex;
+  align-items: center;
+
+  &-value {
+    margin-left: 4px;
+    border-radius: 4px;
+    min-width: 40px;
+    height: 40px;
+    background: #1b1a1ad4;
+    color: white;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}

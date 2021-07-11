@@ -1,0 +1,9 @@
+.ItemsView {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(75px, max-content));
+  grid-template-rows: repeat(5, 110px);
+  grid-gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background: #1b1a1ad4;
+}

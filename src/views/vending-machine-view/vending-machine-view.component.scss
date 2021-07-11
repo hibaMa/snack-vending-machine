@@ -1,0 +1,46 @@
+.vendingMachineView {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 24px;
+  width: max-content;
+  border-radius: 8px;
+  background: whitesmoke;
+  padding: 16px;
+
+  &-pickUpBox {
+    grid-column: 1/-1;
+    height: 50px;
+    background: black;
+    border-radius: 4px;
+    padding: 12px;
+    color: #65ec65;
+    display: flex;
+    align-items: center;
+
+    fa-icon {
+      padding-left: 2px;
+      font-size: 30px;
+
+      &:hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+
+    > *:not(:first-child) {
+      margin-top: 12px;
+    }
+  }
+
+  &-display {
+    min-width: 270px;
+    display: block;
+  }
+}

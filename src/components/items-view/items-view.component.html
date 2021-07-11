@@ -1,0 +1,7 @@
+<div class="ItemsView">
+  <vm-item-slot *ngFor="let item of items"
+                [position]="item.position"
+                [availableInStock]="item.availableInStock"
+                [selected]="enteredPosition === item.position"
+  ></vm-item-slot>
+</div>

@@ -1,0 +1,92 @@
+@mixin vm-button-default($color, $background) {
+  background-color: $background;
+  color: $color;
+}
+
+@mixin vm-button-active($color, $background) {
+  &:active:not(.is-disabled) {
+    background-color: $background !important;
+    color: $color;
+  }
+}
+
+@mixin vm-button-hover($color, $background) {
+  &:hover:not(.is-disabled) {
+    background-color: $background;
+    color: $color;
+  }
+}
+
+.Button {
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+
+  /* Appearances */
+
+  &--primaryAppearance {
+    @include vm-button-default(white, #007abd);
+    @include vm-button-active(white, #0092c9);
+    @include vm-button-hover(white, #1AACE3);
+  }
+
+  &--secondaryAppearance {
+    @include vm-button-default(#596c82, #e8ebed);
+    @include vm-button-active(#596c82, #e8ebed);
+    @include vm-button-hover(#596c82, #dfe2e6);
+  }
+
+  /* Border radius */
+
+  &--leftBorderRadius {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &--noneBorderRadius {
+    border-radius: 0;
+  }
+
+  &--rightBorderRadius {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &--topBorderRadius {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &--bottomBorderRadius {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  /* Sizes */
+
+  &--largeSize {
+    font-size: 16px;
+    height: 48px;
+    padding: 0 24px;
+  }
+
+  &--mediumSize {
+    font-size: 14px;
+    min-height: 40px;
+    padding: 0 16px;
+  }
+
+
+  /* States */
+
+  &.is-disabled {
+    background-color: #3e3e3e;
+    color: #575757;
+    cursor: not-allowed;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+}
